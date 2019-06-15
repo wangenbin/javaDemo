@@ -76,7 +76,12 @@ public class PeopleServiceImpl implements PeopleService {
         Date now = new Date();
         req.setCreateTime(now);
         req.setUpdateTime(now);
-        peopleMapper.insertPeoPle(req);
+        //两个SQL语句，怎样保证安全
+        peopleMapper.insert(req);
+        //插入用户余额表，为0
+            //首先获取扫用户的i、、
+        // int id = queryIdByUser()
+        peopleMapper.insertAmount(req);
         return Result.success();
     }
 
@@ -101,6 +106,10 @@ hook
 3 pom里面的包不能随便乱引入
 shadding
 dubb会自动扫描带server的标签
+
+//插入用户信息的时候怎么返回表的id
+
+mock
  */
 
 

@@ -45,7 +45,7 @@
     id, name, idCard, tel, adress, createUser, createTime, updateUser, updateTime
   </sql>
 
-    <insert id="insertPeoPle" parameterType="com.opay.entity.req.PersonRegisterReq">
+    <insert id="insert" parameterType="com.opay.entity.req.PersonRegisterReq">
       insert into user
       <trim prefix="(" suffix=")" suffixOverrides=",">
 
@@ -109,6 +109,41 @@
       </trim>
 
     </insert>
+<!--  用户注册时创建amount表，余额默认为0-->
+  <insert id="insertAmount" parameterType="com.opay.entity.req.PersonRegisterReq">
+    insert into account
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+
+      <if test="realName != null">
+        real_name,
+      </if>
+
+      <if test="bankNo != null">
+        bank_no,
+      </if>
+      <if test="idCard != null">
+        id_card,
+      </if>
+
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+
+      <if test="realName != null">
+        #{realName},
+      </if>
+
+      <if test="bankNo != null">
+        #{bankNo},
+      </if>
+
+      <if test="idCard != null">
+        #{idCard},
+      </if>
+
+    </trim>
+
+  </insert>
+
 
   <select id="queryUserCount" resultType="java.lang.Integer">
     select count(1) from user

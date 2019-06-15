@@ -1,4 +1,3 @@
-<!--
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -9,18 +8,18 @@
         http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
     <dubbo:annotation package="com.opay.service"/>
 
-    &lt;!&ndash; 提供方应用信息，用于计算依赖关系 &ndash;&gt;
+    <!-- 提供方应用信息，用于计算依赖关系 -->
     <dubbo:application name="opay_provider"/>
-    &lt;!&ndash; 使用multicast广播注册中心暴露服务地址&ndash;&gt;
-    &lt;!&ndash;<dubbo:registry address="multicast://224.1.1.1:1234" />&ndash;&gt;
-    &lt;!&ndash; 使用zookeeper注册中心暴露服务地址 &ndash;&gt;
+    <!-- 使用multicast广播注册中心暴露服务地址-->
+    <!--<dubbo:registry address="multicast://224.1.1.1:1234" />-->
+    <!-- 使用zookeeper注册中心暴露服务地址 -->
     <dubbo:registry address="zookeeper://124.156.112.148:2181"/>
-    &lt;!&ndash; 用dubbo协议在20880端口暴露服务 &ndash;&gt;
+    <!-- 用dubbo协议在20880端口暴露服务 -->
     <dubbo:protocol name="dubbo" port="20880"/>
 
-&lt;!&ndash;    <dubbo:service interface="com."></dubbo:service>&ndash;&gt;
-&lt;!&ndash;    <dubbo:reference interface=""&ndash;&gt;
-    
+<!--    <dubbo:service interface="com."></dubbo:service>-->
+<!--    <dubbo:reference interface=""-->
 
 
-</beans>-->
+
+</beans>

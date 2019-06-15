@@ -8,9 +8,9 @@ import org.apache.ibatis.annotations.Param;
 public interface PeopleMapper {
 
 
-    int insertPeoPle(PersonRegisterReq req);
+    int insert(PersonRegisterReq req);
 
-
+    boolean  insertAmount(PersonRegisterReq req);
 
     int queryUserCount(@Param("mobile") String mobile,@Param("nickName") String name,@Param("idCard")String idCard);
 
