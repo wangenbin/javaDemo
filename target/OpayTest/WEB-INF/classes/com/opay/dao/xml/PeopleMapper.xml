@@ -144,7 +144,7 @@
 
   </insert>
 
-  <!--校验手机号码和身份证号是否存在-->
+
   <select id="queryUserCount" resultType="java.lang.Integer">
     select count(1) from user
     <where>
@@ -159,6 +159,6 @@
       </if>
     </where>
   </select>
-
+<!--校验手机号码是否合法-->
 
 </mapper>

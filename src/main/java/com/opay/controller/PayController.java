@@ -6,10 +6,7 @@ import com.opay.service.PeopleService;
 import com.opay.utils.result.Result;
 import com.opay.utils.result.ResultCode;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
@@ -19,11 +16,15 @@ public class PayController {
     @Autowired
     private PayService payService;
 
-    @PostMapping("/addbanlance")
-    public int  addBalanc(int  num,int id ){
+    //@PostMapping("/addbanlance")
+    @GetMapping("/addbanlance")
+    public int  addBalanc(int  balance,String idCard ){
+        System.out.println("addbanlance start ");
+        System.out.println(balance+idCard);
 
         try {
-            return   payService.addBalance(num,id );
+            System.out.println("addbanlance start ");
+            return   payService.addBalance(balance,idCard );
         } catch (Exception e) {
             e.printStackTrace();
             return 20;

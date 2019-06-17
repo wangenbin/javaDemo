@@ -8,9 +8,9 @@ import org.apache.ibatis.annotations.Param;
 public interface PayMapper {
 
 
-    int addBalance(int num,int id );
-    int queryBalance(int id);
-    boolean updateBalance (int num);
+    //int addBalance(int balance,String idCard );
+    int queryBalance(String idCard);
+    boolean updateBalance (@Param("balance")int balance,@Param("idCard") String idCard);
 
 
 

@@ -19,17 +19,16 @@ public class PayServicelmpl  implements PayService {
 
 
     @Override
-    public int addBalance(int  num,int id ) throws Exception{
+    public int addBalance(int  balance,String idCard ) throws Exception{
+        System.out.println(balance);
         //return this.peopleMapper.insert(people);
         //获取当前账户和账户余额，
-        int amount =payMapper.queryBalance(5);
-        int newAmount = amount+num;
-        payMapper.updateBalance(newAmount);
+        int amount =payMapper.queryBalance("37223212052301101");
+        System.out.println(amount);
+        int newAmount = amount+balance;
+        System.out.println(newAmount);
+        payMapper.updateBalance(newAmount,idCard);
         return 20;
     }
 
-//    @Override
-//    public boolean transBalance (int num) throws  Exception{
-//        return true;
-//    }
 }
