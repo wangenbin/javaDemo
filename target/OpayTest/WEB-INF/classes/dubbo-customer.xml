@@ -9,11 +9,13 @@
         ">
 
     <!-- consumer application name -->
-    <dubbo:application name="consumer-of-helloworld-app"/>
+    <dubbo:application name="consumer-of-helloworld-app1"/>
     <!-- registry address, used for consumer to discover services -->
     <!--<dubbo:registry address="multicast://224.1.1.1:1234" />-->
     <dubbo:registry address="zookeeper://124.156.112.148:2181"/>
     <dubbo:consumer timeout="5000"/>
     <!-- which service to consume? -->
     <dubbo:reference interface="com.opay.service.PeopleService"/>
+    <dubbo:reference interface="com.opay.service.PayService"/>
+
 </beans>

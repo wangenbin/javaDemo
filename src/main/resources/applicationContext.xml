@@ -16,7 +16,7 @@
     <context:component-scan base-package="com.opay">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
     </context:component-scan>
-<!--    <import resource="classpath:dubbo-service.xml"/>-->
+    <import resource="classpath:dubbo-service.xml"/>
 <!--
     <import resource="classpath:dubbo-customer.xml"/>
 -->

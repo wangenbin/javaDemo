@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.opay.dao.mapper.PeopleMapper">
-  <resultMap id="BaseResultMap" type="com.opay.entity.People">
-    <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="idCard" jdbcType="VARCHAR" property="idcard" />
-    <result column="tel" jdbcType="VARCHAR" property="tel" />
-    <result column="adress" jdbcType="VARCHAR" property="adress" />
-    <result column="createUser" jdbcType="VARCHAR" property="createuser" />
-    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
-    <result column="updateUser" jdbcType="VARCHAR" property="updateuser" />
-    <result column="updateTime" jdbcType="TIMESTAMP" property="updatetime" />
-  </resultMap>
+<!--  <resultMap id="BaseResultMap" type="com.opay.entity.People">-->
+<!--    <id column="id" jdbcType="BIGINT" property="id" />-->
+<!--    <result column="name" jdbcType="VARCHAR" property="name" />-->
+<!--    <result column="idCard" jdbcType="VARCHAR" property="idcard" />-->
+<!--    <result column="tel" jdbcType="VARCHAR" property="tel" />-->
+<!--    <result column="adress" jdbcType="VARCHAR" property="adress" />-->
+<!--    <result column="createUser" jdbcType="VARCHAR" property="createuser" />-->
+<!--    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />-->
+<!--    <result column="updateUser" jdbcType="VARCHAR" property="updateuser" />-->
+<!--    <result column="updateTime" jdbcType="TIMESTAMP" property="updatetime" />-->
+<!--  </resultMap>-->
   <sql id="Update_By_Example_Where_Clause">
     <where>
       <foreach collection="example.oredCriteria" item="criteria" separator="or">
@@ -144,7 +144,7 @@
 
   </insert>
 
-
+  <!--校验手机号码和身份证号是否存在-->
   <select id="queryUserCount" resultType="java.lang.Integer">
     select count(1) from user
     <where>
@@ -159,6 +159,6 @@
       </if>
     </where>
   </select>
-<!--校验手机号码是否合法-->
+
 
 </mapper>

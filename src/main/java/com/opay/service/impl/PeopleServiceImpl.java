@@ -8,8 +8,9 @@ import com.opay.utils.result.Result;
 import com.opay.utils.result.ResultCode;
 import org.springframework.beans.factory.annotation.Autowired;
 
-//import com.alibaba.dubbo.config.annotation.Service;
-import org.springframework.stereotype.Service;
+import com.alibaba.dubbo.config.annotation.Service;
+
+//import org.springframework.stereotype.Service;
 
 import org.springframework.util.StringUtils;
 

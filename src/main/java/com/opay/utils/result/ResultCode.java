@@ -18,7 +18,7 @@ public enum ResultCode {
     RZ_SUCCESS(1, "认证成功"),
     FAIL(0, "失败"),
     QUERY_FAIL_1(0, "查询失败 error -1"),
-
+    //失败状态码
     WZC_ERROR(4000, "请先注册"),
     MOBILE_EXITS(0,"手机号已被注册"),
     NAME_EXITS(0,"用户名已被注册"),
@@ -26,6 +26,8 @@ public enum ResultCode {
     PHONE_LESS(0,"手机号必须为11位"),
     PHONE_INVALID(0,"手机号格式不正确"),
     BANKCARD_INVALID(0,"请输入正确银行卡"),
+    AMOUNT_LESS(0,"您的余额不足，请重新输入转账金额"),
+    AMOUNT_REPEACE(0,"不可以自己跟自己转账"),
 
     PARAM_ERR(0,"参数错误");
 

@@ -5,6 +5,7 @@ import com.opay.service.PeopleService;
 import com.opay.utils.result.Result;
 import com.opay.utils.result.ResultCode;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.interceptor.TransactionAspectSupport;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/person")
 public class PersonController {
 
-    @Autowired
+    //@Autowired
     private PeopleService peopleService;
 
     @PostMapping("/register")
@@ -25,6 +26,7 @@ public class PersonController {
           return   peopleService.insertPeople(req);
         } catch (Exception e) {
             e.printStackTrace();
+            TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
             return Result.failure(ResultCode.FAIL,ResultCode.FAIL.message());
         }
     }

@@ -14,6 +14,11 @@
     <select id="queryBalance" resultType="java.lang.Integer">
         SELECT balance  FROM account WHERE id_card=#{idCard}
     </select>
+
+    <!--查找用户交易记录-->
+    <select id="queryRecords" resultType="com.opay.entity.req.TransRecords">
+        SELECT user_send,amount,user_receive  FROM record WHERE user_send=#{idCard}
+    </select>
 <!--更新用户余额-->
 <!--    <update id="updateBalance" >-->
 <!--        update account-->
@@ -34,7 +39,52 @@
         </set>
         where id_card=#{idCard}
     </update>
+
+    <!--插入充值记录和转账记录-->
+
+    <insert id="insertRecords" >
+        insert into record
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+
+            <if test="userSend != null">
+                user_send,
+            </if>
+
+            <if test="amount != null">
+                amount,
+            </if>
+            <if test="userReceive != null">
+                user_receive,
+            </if>
+            <if test="typeName != null">
+                type_name,
+            </if>
+
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+
+            <if test="userSend != null">
+                #{userSend},
+            </if>
+
+            <if test="amount != null">
+                #{amount},
+            </if>
+
+            <if test="userReceive != null">
+                #{userReceive},
+            </if>
+
+            <if test="typeName != null">
+                #{typeName},
+            </if>
+
+        </trim>
+
+    </insert>
 </mapper>
+
+
 
 <!--        UPDATE Person SET FirstName = 'Fred' WHERE LastName = 'Wilson' -->
 <!--<update id="updateOne"  parameterType="com.inspur.search.data.EntityRelation">
